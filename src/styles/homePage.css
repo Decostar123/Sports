@@ -1,0 +1,25 @@
+.newsItemFilter {
+  margin-top: 20px;
+  width: 80%;
+  margin-left: 10%;
+  height: 50px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #1e90ff;
+}
+
+.filters {
+  border-bottom: 2px solid #f4f7fc;
+  padding-bottom: 50px;
+}
+.extraFilters {
+  display: flex;
+  justify-content: space-evenly;
+}
+.authorNameFilter {
+  width: 30%;
+  height: 40px;
+}
+.dateFilter {
+  width: 30%;
+}

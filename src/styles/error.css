@@ -1,0 +1,12 @@
+.error {
+  margin-top: 10px;
+}
+.firstError {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+}
+.secondError {
+  color: gray;
+  text-align: center;
+}

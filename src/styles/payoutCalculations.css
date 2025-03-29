@@ -1,0 +1,92 @@
+/* General Styles */
+.payoutDetails {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 30px 0;
+  color: #333;
+  word-wrap: break-word; /* Handle long text */
+}
+
+.buttonOptions {
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+  box-sizing: border-box;
+}
+
+.buttonOptions button {
+  flex: 1 1 30%;
+  min-width: 120px;
+  padding: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+.buttonOptions button:hover {
+  background-color: #007bff;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Table Container Styling */
+.tableContainer {
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 95%;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+.tableContainer table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .payoutDetails {
+    font-size: 1.8rem;
+    margin: 20px 0;
+  }
+
+  .buttonOptions {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .buttonOptions button {
+    min-width: 90%; /* Full width for better touch targets */
+    padding: 12px;
+  }
+
+  .tableContainer {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .payoutDetails {
+    font-size: 1.5rem;
+    margin: 15px 0;
+  }
+
+  .buttonOptions button {
+    min-width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+  }
+
+  .tableContainer {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,26 @@
+.outerTrendingContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.trendingTopic {
+  margin-left: 10px;
+  width: 100%;
+}
+.topicName {
+  text-align: left;
+  font-size: 25px;
+  font-style: italic;
+  margin: 50px;
+  left: 0;
+  color: var(--font-color);
+}
+.chart {
+  width: 35vw;
+  margin: auto;
+}
+.chart canvas {
+  width: 100% !important;
+  height: 100% !important;
+}

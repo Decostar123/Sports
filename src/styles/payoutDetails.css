@@ -1,0 +1,61 @@
+.payoutDetails {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 30px 0;
+  color: #333;
+  color: var(--font-color) !important  ;
+}
+
+.buttonOptions {
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.buttonOptions button {
+  flex: 1 1 30%;
+  min-width: 120px;
+  padding: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+/* Table Container Styling */
+.tableContainer {
+  padding: 20px; /* Space inside the container */
+  margin: 20px auto; /* Space around the container */
+  max-width: 95%; /* Responsive width */
+  background-color: #fff; /* Background color for contrast */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* For cleaner rounded corners */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .payoutDetails {
+    font-size: 1.8rem;
+    margin: 20px 0;
+  }
+
+  .buttonOptions {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .payoutDetails {
+    font-size: 1.5rem;
+    margin: 15px 0;
+  }
+
+  .buttonOptions button {
+    min-width: 100%;
+    padding: 12px;
+  }
+}

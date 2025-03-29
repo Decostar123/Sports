@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --primary-background: #f4f7fc;
+  --font-color: black;
+}
+
+[data-theme='dark'] {
+  --primary-background: black;
+  --font-color: white;
+}
+
+div {
+  background-color: var(--primary-background) !important;
+}
+
+.ant-switch-handle,
+.ant-switch-inner {
+  border-radius: 50%;
+}

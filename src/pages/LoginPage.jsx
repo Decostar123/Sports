@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 export function LoginPage() {
   const { setUserDetails } = useAuthContext();
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(true);
 
   const login = useGoogleLogin({
     onSuccess: (tokenResponse) => {
@@ -31,6 +31,7 @@ export function LoginPage() {
               size="small"
               className="login-switch"
               value={isAdmin}
+              
               onChange={(val) => setIsAdmin(val)}
             />
           </div>

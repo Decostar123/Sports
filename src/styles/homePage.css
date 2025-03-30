@@ -23,3 +23,12 @@
 .dateFilter {
   width: 30%;
 }
+body[data-theme='dark'] .ant-layout-sider-trigger {
+  background: #1f1f1f;
+  color: #ffffff;
+}
+
+body[data-theme='light'] .ant-layout-sider-trigger {
+  background: #ffffff;
+  color: #1f1f1f;
+}

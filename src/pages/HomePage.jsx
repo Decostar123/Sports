@@ -4,6 +4,7 @@ import { debounce } from 'lodash';
 import { useDataProvider } from '../context';
 import '../styles/homePage.css';
 import { NoDataComponent } from '../components';
+import newsData from "../utils/newsData.json"
 export function HomePage() {
   const {
     newsItemsList,
@@ -21,105 +22,11 @@ export function HomePage() {
       const fetchItems = await fetch(
         `https://newsapi.org/v2/everything?q=${
           newsItemValueFilter ? newsItemValueFilter : 'sports'
-        }&sortBy=publishedAt&apiKey=5c3bca78178242bc9e8281d88947cb95`
+        }&sortBy=publishedAt&apiKey=bf75de50a6ac411ea49750cc26a83c15`
       );
       let data = await fetchItems.json();
-      data = data.articles || [];
-      data = [
-        {
-          source: {
-            id: null,
-            name: 'Biztoc.com',
-          },
-          author: 'msnbc.com',
-          title: 'The right’s outrage about Tesla protests rings especially hollow',
-          description:
-            'Demonstrators protest at the "Tesla Takedown Dance Party" in front of the Tesla store in the Georgetown neighborhood of Washington, D.C., on March 22, 2025.',
-          url: 'https://biztoc.com/x/d144e3043c3a7a7e',
-          urlToImage: 'https://biztoc.com/cdn/d144e3043c3a7a7e_s.webp',
-          publishedAt: '2025-03-29T12:13:03Z',
-          content:
-            'Demonstrators protest at the "Tesla Takedown Dance Party" in front of the Tesla store in the Georgetown neighborhood of Washington, D.C., on March 22, 2025.\r\nThis story appeared on msnbc.com, 2025-03… [+12 chars]',
-        },
-        {
-          source: {
-            id: null,
-            name: 'Biztoc.com',
-          },
-          author: 'barchart.com',
-          title: 'Tesla Stock: Why Are Wall Street Analysts So Intensely Divided?',
-          description:
-            'Your browser of choice has not been tested for use with Barchart.com. If you have issues, please download one of the browsers listed here.\nLess than $10/month! Get more Watchlists, Portfolios, Custom Views and Chart Templates with Barchart Plus.\nFREE 30 Day T…',
-          url: 'https://biztoc.com/x/d45abd3e3467024f',
-          urlToImage: 'https://biztoc.com/cdn/d45abd3e3467024f_s.webp',
-          publishedAt: '2025-03-29T12:12:50Z',
-          content:
-            'Your browser of choice has not been tested for use with Barchart.com. If you have issues, please download one of the browsers listed here.Less than $10/month! Get more Watchlists, Portfolios, Custom … [+135 chars]',
-        },
-        {
-          source: {
-            id: null,
-            name: 'Biztoc.com',
-          },
-          author: 'thestreet.com',
-          title: 'Analyst reboots Tesla stock price target ahead of deliveries',
-          description:
-            "Pure chaos.\nNow, those are two words that don't sound appealing under any circumstances.\nYet that is the exact term that a team of Wedbush analysts led by Dan Ives used to describe President Donald Trump's plan to slap a 25% tariff on all imported cars starti…",
-          url: 'https://biztoc.com/x/fb6b3fd1666c30b1',
-          urlToImage: 'https://biztoc.com/cdn/fb6b3fd1666c30b1_s.webp',
-          publishedAt: '2025-03-29T11:50:28Z',
-          content:
-            "Pure chaos.Now, those are two words that don't sound appealing under any circumstances.Yet that is the exact term that a team of Wedbush analysts led by Dan Ives used to describe President Donald Tru… [+142 chars]",
-        },
-        {
-          source: {
-            id: null,
-            name: 'Forbes',
-          },
-          author:
-            'Billy Bambrough, Senior Contributor, \n Billy Bambrough, Senior Contributor\n https://www.forbes.com/sites/billybambrough/',
-          title: 'Bitcoin And Crypto Brace For A Huge $36 Trillion April Fed Price Flip',
-          description:
-            'Federal Reserve chair Jerome Powell could be about to trigger bitcoin price and crypto market mayhem...',
-          url: 'https://www.forbes.com/sites/digital-assets/2025/03/29/bitcoin-and-crypto-braced-for-a-huge-36-trillion-april-fed-price-flip/',
-          urlToImage:
-            'https://imageio.forbes.com/specials-images/imageserve/66f58a10bd6ceded58613539/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds',
-          publishedAt: '2025-03-29T11:45:34Z',
-          content:
-            'Bitcoin and crypto prices have dropped back as inflation fears and U.S. president Donald Trumps tariff threats continue to weigh on the bitcoin price (as well as fresh fears over a new, mystery hack)… [+3301 chars]',
-        },
-        {
-          source: {
-            id: null,
-            name: 'Fark.com',
-          },
-          author: null,
-          title:
-            "Two thirds of Americans won't buy a Tesla, most citing Elon Musk's meddling. The other third can't afford one [Amusing]",
-          description:
-            "Two thirds of Americans won't buy a Tesla, most citing Elon Musk's meddling. The other third can't afford one",
-          url: 'https://www.fark.com/comments/13615014/Two-thirds-of-Americans-wont-buy-a-Tesla-most-citing-Elon-Musks-meddling-The-other-third-cant-afford-one',
-          urlToImage: 'https://img.fark.net/images/2013/site/farkLogo2Big.gif',
-          publishedAt: '2025-03-29T11:35:51Z',
-          content:
-            'FTA  "Meanwhile, Tesla - the target of #TeslaTakedown protests at dealerships across the country - is now more popular with Republicans (27% of whom say they would consider buying or leasing one) tha… [+278 chars]',
-        },
-        {
-          source: {
-            id: null,
-            name: 'Newser',
-          },
-          author: 'Jenn Gidman',
-          title: 'Elon Musk Sells X, to Another Musk Company',
-          description:
-            "Elon Musk has sold social media site X to his own xAI artificial intelligence company in a $33 billion all-stock deal, the billionaire announced on Friday. Both companies are privately held, which means they aren't required to disclose their finances to the p…",
-          url: 'https://www.newser.com/story/366403/elon-musk-sells-x-to-another-musk-company.html',
-          urlToImage: 'https://img1-azrcdn.newser.com/image/1601472-12-20250329063002.jpeg',
-          publishedAt: '2025-03-29T11:30:00Z',
-          content:
-            'Elon Musk has sold social media site X to his own xAI artificial intelligence company in a $33 billion all-stock deal, the billionaire announced on Friday. Both companies are privately held, which me… [+1153 chars]',
-        },
-      ];
+      //IF THE API KEY ACCESS IS OVER 
+      data = data.articles || newsData.articles;
       let result = data.map((item) => ({ ...item, label: item.title }));
       result = result.filter((item) => item.publishedAt && item.author);
       applyFilters(result);
